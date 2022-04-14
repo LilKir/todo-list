@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Helmet } from "react-helmet";
 
 import AddForm from "../add-form/addForm";
 import TodoList from "../todo-list/todoList";
@@ -81,16 +82,22 @@ class App extends Component {
     const visibleData = this.filterTask(data, filter);
 
     return (
-      <div className="container">
-        <AddForm onAdd={this.addItem} />
+      <>
+        <Helmet>
+          <meta name="description" content="Todo list" />
+          <title>ToDo list</title>
+        </Helmet>
+        <div className="container">
+          <AddForm onAdd={this.addItem} />
 
-        <TodoList
-          data={visibleData}
-          onDelete={this.deleteItem}
-          onToggleState={this.onToggleState}
-        />
-        <TodoFilter filter={filter} onFilterSelect={this.onFilterSelect} />
-      </div>
+          <TodoList
+            data={visibleData}
+            onDelete={this.deleteItem}
+            onToggleState={this.onToggleState}
+          />
+          <TodoFilter filter={filter} onFilterSelect={this.onFilterSelect} />
+        </div>
+      </>
     );
   }
 }
