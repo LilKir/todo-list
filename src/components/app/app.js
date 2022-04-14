@@ -81,8 +81,9 @@ class App extends Component {
     const visibleData = this.filterTask(data, filter);
 
     return (
-      <div className="app">
+      <div className="container">
         <AddForm onAdd={this.addItem} />
+
         <TodoList
           data={visibleData}
           onDelete={this.deleteItem}

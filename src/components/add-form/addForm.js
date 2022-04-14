@@ -31,7 +31,6 @@ class AddForm extends Component {
         <form className="add-form d-flex" onSubmit={this.onSubmit}>
           <input
             type="text"
-            className="form-control new-post-label"
             placeholder="Что ты хочешь не забыть сделать?"
             name="title"
             value={title}
